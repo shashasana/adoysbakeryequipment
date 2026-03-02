@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #0017FE;
+  --color-brand-secondary: #00D1FF;
+  --color-brand-accent: #FF3B30;
+
+  --font-sans: "Inter", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif";
+
+  /* Map custom variables to Tailwind utility colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+:root {
+  --background: #F9FAFB;
+  --foreground: #0B0E14;
+  --card: #FFFFFF;
+  --card-foreground: #0B0E14;
+  --popover: #FFFFFF;
+  --popover-foreground: #0B0E14;
+  --primary: #0017FE;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F3F4F6;
+  --secondary-foreground: #111827;
+  --muted: #F3F4F6;
+  --muted-foreground: #6B7280;
+  --accent: #F3F4F6;
+  --accent-foreground: #111827;
+  --destructive: #EF4444;
+  --destructive-foreground: #FAFAFA;
+  --border: #E5E7EB;
+  --input: #E5E7EB;
+  --ring: #0017FE;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: #0B0E14;
+  --foreground: #F9FAFB;
+  --card: #161B22;
+  --card-foreground: #F9FAFB;
+  --popover: #161B22;
+  --popover-foreground: #F9FAFB;
+  --primary: #0017FE;
+  --primary-foreground: #FFFFFF;
+  --secondary: #212830;
+  --secondary-foreground: #F9FAFB;
+  --muted: #212830;
+  --muted-foreground: #94A3B8;
+  --accent: #212830;
+  --accent-foreground: #F9FAFB;
+  --destructive: #B91C1C;
+  --destructive-foreground: #FAFAFA;
+  --border: #30363D;
+  --input: #30363D;
+  --ring: #0017FE;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Glassmorphism utility */
+.glass {
+  @apply bg-white/70 dark:bg-slate-900/70 backdrop-blur-md border border-white/20 dark:border-slate-800/20 shadow-xl;
+}
+
+.glass-card {
+  @apply bg-white/40 dark:bg-slate-900/40 backdrop-blur-sm border border-white/10 dark:border-slate-800/10;
+}
